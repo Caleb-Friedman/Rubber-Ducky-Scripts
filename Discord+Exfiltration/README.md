@@ -1,3 +1,5 @@
+## Discord Exfiltration
+
 This script is a simple script that steals the victim's public IP address and DNS address. 
 Category: Execute
 
